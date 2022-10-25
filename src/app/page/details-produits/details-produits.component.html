@@ -16,6 +16,7 @@
         <th scope="col">Price</th>
         <th scope="col">Quantité</th>
         <th scope="col">Promotion</th>
+        <th scope ="col">Commentaires</th>
 
 
        
@@ -35,6 +36,7 @@
                 <td>{{produit.quantity_sold}}  
                   <button type="button" class="btn btn-warning" (click)="addPromotion(produit)">+</button>
                   <button type="button" class="btn btn-warning" (click)="subPromotion(produit)">-</button></td>
+                <td>{{produit.comments}}</td>
               </tr>
         
     </tbody>
@@ -51,6 +53,8 @@
         <th scope="col">Price</th>
         <th scope="col">Quantité</th>
         <th scope="col">Promotion</th>
+        <th scope ="col">Commentaires</th>
+        
 
 
        
@@ -70,6 +74,7 @@
               <td>{{produit.quantity_sold}}  
                 <button type="button" class="btn btn-warning" (click)="addPromotion(produit)">+</button>
                 <button type="button" class="btn btn-warning" (click)="subPromotion(produit)">-</button></td>
+              <td>{{produit.comments}}</td>
             </tr>
         
     </tbody>
@@ -87,6 +92,7 @@
         <th scope="col">Price</th>
         <th scope="col">Quantité</th>
         <th scope="col">Promotion</th>
+        <th scope ="col">Commentaires</th>
 
 
        
@@ -106,6 +112,7 @@
               <td>{{produit.quantity_sold}}  
                 <button type="button" class="btn btn-warning" (click)="addPromotion(produit)">+</button>
                 <button type="button" class="btn btn-warning" (click)="subPromotion(produit)">-</button></td>
+              <td>{{produit.comments}}</td>
             </tr>
         
     </tbody>
@@ -134,7 +141,7 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-link" data-dismiss="modal">Annuler</button>
-          <button type="button" class="btn btn-dark">Envoyer -></button>
+          <button type="button" class="btn btn-dark" (click)="vendre()">Envoyer -></button>
         </div>
       </div>
     </div>

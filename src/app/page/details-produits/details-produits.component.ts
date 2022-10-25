@@ -12,17 +12,21 @@ import { MdbModalRef, MdbModalService } from 'mdb-angular-ui-kit/modal';
 })
 export class DetailsProduitsComponent implements OnInit {
 
- listeProduits : Product[] = [] ; 
+ listeProduits : Product[] = [] ;
+ 
+ prelisteProduits : Product[] = [] ; 
+ postlisteProduits : Product[] = [] ; 
 
  cat1 : Product [] = [] ; 
  cat2 : Product [] = [] ; 
  cat3: Product [] = [] ; 
  
+totale : number = 0; 
+
 
 
   constructor(private productService : ProductsService) {
-    
-
+  
 
    }
 
@@ -96,6 +100,12 @@ export class DetailsProduitsComponent implements OnInit {
   modifier(product : Product)
   {
 
+  }
+
+
+  vendre()
+  {
+    console.log("Vendu"); 
   }
 
 
