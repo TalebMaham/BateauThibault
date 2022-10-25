@@ -1,3 +1,210 @@
+
+
+
 <h1>Details Produits</h1>
 
 <p>details-produits works!</p>
+
+<p id = "titre"></p>
+
+<h3>Poissons : </h3>
+<table class="table table-bordered table-dark">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Name</th>
+        <th scope="col">Price</th>
+        <th scope="col">Quantité</th>
+        <th scope="col">Promotion</th>
+
+
+       
+      </tr>
+    </thead>
+    <tbody>
+        
+            <tr *ngFor="let produit of cat1">
+                <th scope="row">{{produit.id}}</th>
+                <td>{{produit.name}}</td>
+                <td>{{produit.price}}</td>
+                <td>{{produit.quantity_stock}}
+                  <button type="button" class="btn btn-warning" (click)="add(produit)">+</button>
+                  <button type="button" class="btn btn-warning" (click)="sub(produit)">vendu</button>
+                  <button type="button" class="btn btn-warning" (click)="sub(produit)">perimé</button>
+                </td>
+                <td>{{produit.quantity_sold}}  
+                  <button type="button" class="btn btn-warning" (click)="addPromotion(produit)">+</button>
+                  <button type="button" class="btn btn-warning" (click)="subPromotion(produit)">-</button></td>
+              </tr>
+        
+    </tbody>
+  </table>
+
+
+
+  <h3>Category 2: </h3>
+<table class="table table-bordered table-dark">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Name</th>
+        <th scope="col">Price</th>
+        <th scope="col">Quantité</th>
+        <th scope="col">Promotion</th>
+
+
+       
+      </tr>
+    </thead>
+    <tbody>
+        
+            <tr *ngFor="let produit of cat2">
+              <th scope="row">{{produit.id}}</th>
+              <td>{{produit.name}}</td>
+              <td>{{produit.price}}</td>
+              <td>{{produit.quantity_stock}}
+                <button type="button" class="btn btn-warning" (click)="add(produit)">+</button>
+                <button type="button" class="btn btn-warning" (click)="sub(produit)">vendu</button>
+                <button type="button" class="btn btn-warning" (click)="sub(produit)">perimé</button>
+              </td>
+              <td>{{produit.quantity_sold}}  
+                <button type="button" class="btn btn-warning" (click)="addPromotion(produit)">+</button>
+                <button type="button" class="btn btn-warning" (click)="subPromotion(produit)">-</button></td>
+            </tr>
+        
+    </tbody>
+  </table>
+
+
+
+
+  <h3>Category 3 : </h3>
+<table class="table table-bordered table-dark">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Name</th>
+        <th scope="col">Price</th>
+        <th scope="col">Quantité</th>
+        <th scope="col">Promotion</th>
+
+
+       
+      </tr>
+    </thead>
+    <tbody>
+        
+            <tr *ngFor="let produit of cat3">
+              <th scope="row">{{produit.id}}</th>
+              <td>{{produit.name}}</td>
+              <td>{{produit.price}}</td>
+              <td>{{produit.quantity_stock}}
+                <button type="button" class="btn btn-warning" (click)="add(produit)">+</button>
+                <button type="button" class="btn btn-warning" (click)="sub(produit)">vendu</button>
+                <button type="button" class="btn btn-warning" (click)="sub(produit)">perimé</button>
+              </td>
+              <td>{{produit.quantity_sold}}  
+                <button type="button" class="btn btn-warning" (click)="addPromotion(produit)">+</button>
+                <button type="button" class="btn btn-warning" (click)="subPromotion(produit)">-</button></td>
+            </tr>
+        
+    </tbody>
+  </table>
+
+
+
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-dark" data-toggle="modal" data-target="#exampleModal">
+    Envoyer ->
+  </button>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Envoyer Mise à jour</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          Vous voullez vraiment envoyer la mise à jour ?
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-link" data-dismiss="modal">Annuler</button>
+          <button type="button" class="btn btn-dark">Envoyer -></button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+   <!-- Modal -->
+   <div class="modal fade" id="modalStock" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modifier</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <label class="form-label">Ajouter/Enlever</label>
+            <input type="text" class = "form-control">
+            <button type = "button" class="btn btn-dark">+</button>
+            <button type = "button" class="btn btn-dark">-</button>
+
+          
+       
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-link" data-dismiss="modal">Annuler</button>
+          <button type="button" class="btn btn-dark">Envoyer -></button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+   <!-- Modal -->
+   <div class="modal fade" id="modalProm" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modifier</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <label class="form-label">Modifier le pourcentage de la Promotion</label>
+            <input type="text" class = "form-control">
+            <button type = "button" class="btn btn-dark">+</button>
+            <button type = "button" class="btn btn-dark">-</button>
+
+          
+       
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-link" data-dismiss="modal">Annuler</button>
+          <button type="button" class="btn btn-dark">Envoyer -></button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+

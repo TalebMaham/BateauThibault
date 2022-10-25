@@ -8,14 +8,17 @@ import { HeaderComponent } from './features/header/header.component';
 import { FooterComponent } from './features/footer/footer.component';
 import { DetailsProduitsComponent } from './page/details-produits/details-produits.component';
 import { ProductsService } from './core/services/products.service';
-import {HttpClientModule} from '@angular/common/http'
+import {HttpClientModule} from '@angular/common/http';
+import { AuthentificationComponent } from './page/authentification/authentification.component';
+
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     HeaderComponent,
     FooterComponent,
-    DetailsProduitsComponent
+    DetailsProduitsComponent,
+    AuthentificationComponent,
   ],
   imports: [
     HttpClientModule,

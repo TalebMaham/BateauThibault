@@ -8,6 +8,7 @@ export interface Product {
     availability : boolean ; 
     sale : boolean ; 
     discount : number ; 
-    comments : string ; 
-    owner : string ; 
+    quantity_stock: number,
+    quantity_sold: number
+
 }
