@@ -107,7 +107,11 @@ totale : number = 0;
   {
     console.log("Vendu"); 
   }
-
+  promo: any = '';
+  clickme() {
+    console.log('it does nothing',this.promo);
+  }
+  
 
 
   
