@@ -29,13 +29,13 @@
                 <td>{{produit.name}}</td>
                 <td>{{produit.price}}</td>
                 <td>
-                  <input type="number" value="{{produit.quantity_stock}}" (keyup)="recV($event,produit)">
+                  <input type="number" class="input" value="{{produit.quantity_stock}}" (keyup)="recV($event,produit)">
                   <button type="button" class="btn btn-warning" (click)="add(produit)">+</button>
                   <button type="button" class="btn btn-warning" (click)="sub(produit)">vendu</button>
                   <button type="button" class="btn btn-warning" (click)="sub(produit)">perimé</button>
                 </td>
                 <td>
-                  <input type="number" value="{{produit.quantity_sold}}" (keyup)="onKey($event,produit)">
+                  <input type="number" class="input" value="{{produit.quantity_sold}}" (keyup)="onKey($event,produit)">
                   <button type="button" class="btn btn-warning" (click)="addPromotion(produit)">+</button>
                   <button type="button" class="btn btn-warning" (click)="subPromotion(produit)">-</button></td>
                 <td>{{produit.comments}}</td>
