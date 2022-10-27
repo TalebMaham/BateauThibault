@@ -17,6 +17,8 @@ export class DetailsProduitsComponent implements OnInit {
  prelisteProduits : Product[] = [] ; 
  postlisteProduits : Product[] = [] ; 
 
+ x : string ="";
+
  cat1 : Product [] = [] ; 
  cat2 : Product [] = [] ; 
  cat3: Product [] = [] ; 
@@ -70,7 +72,9 @@ totale : number = 0;
 
   add( product : Product)
   {
-    
+  
+
+ 
     product.quantity_stock ++ ; 
 
   }
