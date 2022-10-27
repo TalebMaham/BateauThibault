@@ -47,7 +47,7 @@ totale : number = 0;
       this.cat3 = this.getCat(2);  
     
     },
-    (err) => {
+    (_err) => {
       alert('failed loading json data');
     });
   }
@@ -70,14 +70,7 @@ totale : number = 0;
   }
 
 
-  add( product : Product)
-  {
-  
-
  
-    product.quantity_stock ++ ; 
-
-  }
 
   sub( product : Product)
   {
@@ -86,12 +79,7 @@ totale : number = 0;
 
   }
 
-  addPromotion( product : Product)
-  {
-    
-    product.quantity_sold ++ ; 
 
-  }
 
   subPromotion( product : Product)
   {
@@ -101,7 +89,7 @@ totale : number = 0;
   }
 
 
-  modifier(product : Product)
+  modifier(_product : Product)
   {
 
   }
@@ -111,7 +99,56 @@ totale : number = 0;
   {
     console.log("Vendu"); 
   }
+  promo: any = '';
+  promos: any = '';
+  clickme() {
+    if (this.promo > 100 && this.promo < 0 ) {
+      return alert("le pourcentage doit etre enytre 0 et 100");
+    }
+    else {
+      console.log('it does nothing',this.promo);
+    }
+    
+  }
+  
+  onKey(event : any, product : Product) 
+  {const inputValue = event.target.value;
+    if (inputValue > 100 ) {
+      return alert("le pourcentage doit etre enytre 0 et 100");
+    }
+    if (inputValue < 0 ) {
+      return alert("le pourcentage doit etre enytre 0 et 100");      
+    }
+    
+    product.quantity_sold = inputValue 
+  }
+  
+  addPromotion( product : Product)
+  {
+    if (product.quantity_sold > 99) {
+      return alert("le pourcentage doit etre enytre 0 et 100");
+    }
+    if (product.quantity_sold < 0 ) {
+      return alert("le pourcentage doit etre enytre 0 et 100");      
+    }
+    
+    
+    product.quantity_sold ++ ; 
 
+  }
+  
+  recV(event : any, product : Product) 
+  {const inputValue = event.target.value;
+    
+    product.quantity_stock = inputValue ;
+  }
+  add( product : Product)
+  {
+    
+    product.quantity_stock ++ ; 
+
+  }
+  
 
 
   
