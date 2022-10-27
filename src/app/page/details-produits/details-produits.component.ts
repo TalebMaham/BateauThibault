@@ -87,10 +87,7 @@ totale : number = 0;
   }
 
 
-  modifier(_product : Product)
-  {
-
-  }
+  
 
 
   vendre()
@@ -112,10 +109,10 @@ totale : number = 0;
   onKey(event : any, product : Product) 
   {const inputValue = event.target.value;
     if (inputValue > 100 ) {
-      return alert("le pourcentage doit etre enytre 0 et 100");
+      return alert("le pourcentage doit etre entre 0 et 100");
     }
     if (inputValue < 0 ) {
-      return alert("le pourcentage doit etre enytre 0 et 100");      
+      return alert("le pourcentage doit etre entre 0 et 100");      
     }
     
     product.quantity_sold = inputValue 
