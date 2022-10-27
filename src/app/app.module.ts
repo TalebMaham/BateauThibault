@@ -11,6 +11,7 @@ import { DetailsProduitsComponent } from './page/details-produits/details-produi
 import { ProductsService } from './core/services/products.service';
 import {HttpClientModule} from '@angular/common/http';
 import { AuthentificationComponent } from './page/authentification/authentification.component';
+import { HistoriqueComponent } from './page/historique/historique.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { AuthentificationComponent } from './page/authentification/authentificat
     FooterComponent,
     DetailsProduitsComponent,
     AuthentificationComponent,
+    HistoriqueComponent,
   ],
   imports: [
     HttpClientModule,

@@ -27,7 +27,11 @@
             <tr *ngFor="let produit of cat1">
                 <th scope="row">{{produit.id}}</th>
                 <td>{{produit.name}}</td>
-                <td>{{produit.price}}</td>
+                <td>
+                  <input type="number" class="input"  (keyup)="recP($event,produit)">
+                  <input value="{{produit.price}}" type = "text" class = "form-control" style="width: 50px ; " disabled>
+                  
+                </td>
                 <td>
                   <input type="number" class="input"  (keyup)="recV($event,produit)">
                   <button type="button" class="btn btn-warning" (click)="add(produit)">+</button>
@@ -70,7 +74,10 @@
             <tr *ngFor="let produit of cat2">
               <th scope="row">{{produit.id}}</th>
               <td>{{produit.name}}</td>
-              <td>{{produit.price}}</td>
+              <td>
+                <input type="number" class="input"  (keyup)="recP($event,produit)">
+                <input value="{{produit.price}}" type = "text" class = "form-control" style="width: 50px ; " disabled>    
+              </td>
               <td>
                 <input type="number" class="input"  (keyup)="recV($event,produit)">
                 <button type="button" class="btn btn-warning" (click)="add(produit)">+</button>
@@ -113,7 +120,10 @@
             <tr *ngFor="let produit of cat3">
               <th scope="row">{{produit.id}}</th>
               <td>{{produit.name}}</td>
-              <td>{{produit.price}}</td>
+              <td>
+                <input type="number" class="input"  (keyup)="recP($event,produit)">
+                <input value="{{produit.price}}" type = "text" class = "form-control" style="width: 50px ; " disabled>   
+              </td>
               <td>
                 <input type="number" class="input"  (keyup)="recV($event,produit)">
                 <button type="button" class="btn btn-warning" (click)="add(produit)">+</button>

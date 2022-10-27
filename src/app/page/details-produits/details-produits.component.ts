@@ -129,6 +129,15 @@ totale : number = 0;
 
     } 
   }
+  
+  recP(event : any, product : Product) 
+  {const inputValue = event.target.value;
+    product.price = parseInt(inputValue,10);
+    if (isNaN(product.price)){
+      product.price = inputValue;
+
+    } 
+  }
 
 
   
