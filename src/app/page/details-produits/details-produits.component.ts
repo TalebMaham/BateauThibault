@@ -11,6 +11,7 @@ import { MdbModalRef, MdbModalService } from 'mdb-angular-ui-kit/modal';
   styleUrls: ['./details-produits.component.css']
 })
 export class DetailsProduitsComponent implements OnInit {
+  
 
  listeProduits : Product[] = [] ;
  
@@ -89,63 +90,69 @@ totale : number = 0;
   }
 
 
-  
-
-
   vendre()
   {
     console.log("Vendu"); 
   }
-  promo: any = '';
-  promos: any = '';
-  clickme() {
-    if (this.promo > 100 && this.promo < 0 ) {
-      return alert("le pourcentage doit etre enytre 0 et 100");
-    }
-    else {
-      console.log('it does nothing',this.promo);
-    }
-    
-  }
+
   
-  onKey(event : any, product : Product) 
-  {const inputValue = event.target.value;
-    if (inputValue > 100 ) {
-      return alert("le pourcentage doit etre entre 0 et 100");
+
+  oneKey(event : any,product : Product) 
+  {  
+    const inputValue = event.target.value;
+    if (isNaN(product.quantity_sold)){
+      product.quantity_sold = inputValue;
+
+    } 
+
+    if (inputValue > 99) {
+      event.target.style.background = 'red';
+      return alert("le pourcentage doit etre enytre 0 et 100");
     }
     if (inputValue < 0 ) {
-      return alert("le pourcentage doit etre entre 0 et 100");      
-    }
-    
-    product.quantity_sold = inputValue 
+      event.target.style.background = 'red';
+      return alert("le pourcentage doit etre enytre 0 et 100");
+  }
+  else {
+    event.target.style.background = 'black';
+    product.quantity_sold = parseInt(inputValue,10);
   }
   
-  addPromotion( product : Product)
-  {
-    if (product.quantity_sold > 99) {
-      return alert("le pourcentage doit etre enytre 0 et 100");
-    }
-    if (product.quantity_sold < 0 ) {
-      return alert("le pourcentage doit etre enytre 0 et 100");      
-    }
-    
-    
-    product.quantity_sold ++ ; 
-
-  }
+}
   
   recV(event : any, product : Product) 
   {const inputValue = event.target.value;
     
-    product.quantity_stock = inputValue ;
+    product.quantity_stock = parseInt(inputValue,10);
+    if (isNaN(product.quantity_stock)){
+      product.quantity_stock = inputValue;
+
+    } 
   }
+
+
+  
   add( product : Product)
   {
     
     product.quantity_stock ++ ; 
 
   }
+  addPromotion(product : Product )
+  {  
   
+    if (product.quantity_sold > 99) {
+      return alert("le pourcentage doit etre enytre 0 et 100");
+      
+    }
+    if (product.quantity_sold < 0 ) {
+      return alert("le pourcentage doit etre enytre 0 et 100"); 
+
+  }
+  else{
+    product.quantity_sold ++ ;
+  }
+}
 
 
   
